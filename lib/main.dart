@@ -103,7 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'WELCOME TO THE BASE,${state.user?.person?.firstName ?? ""}!',
+                            'WELCOME TO ,',
+                                //'${state.user?.person?.firstName ?? ""}!',
                             style: TextStyle(
                               fontFamily: 'FoundersGrotesqueXCond',
                               color: Colors.white,
@@ -148,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //CHANGE BUTTON
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.redAccent,
+                primary: Colors.blue,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
