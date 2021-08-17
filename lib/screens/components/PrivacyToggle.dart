@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class PrivacyToggle extends StatefulWidget {
   PrivacyToggle({Key key, this.onChanged}) : super(key: key);
