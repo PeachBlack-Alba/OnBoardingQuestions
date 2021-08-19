@@ -21,7 +21,7 @@ class _PrivacyToggleState extends State<PrivacyToggle> {
         height: 30,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50.0),
-          color: widget.value ? TheBaseColors.lightRed : Color(0xFFDCDCDC),
+          color: widget.value ? Colors.red : Color(0xFFDCDCDC),
         ),
         child: AnimatedAlign(
           duration: const Duration(milliseconds: 300),
