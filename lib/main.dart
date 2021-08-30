@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onboardingQuestions/screens/onBoardingSteps/OnBoardingStep3.dart';
+import 'package:onboardingQuestions/screens/onBoardingSteps/OnboardingStep3.dart';
 
 void main() {
   runApp(MyApp());
@@ -106,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             'WELCOME TO ,',
                                 //'${state.user?.person?.firstName ?? ""}!',
                             style: TextStyle(
-                              fontFamily: 'FoundersGrotesqueXCond',
+                              fontFamily: 'Foucd ndersGrotesqueXCond',
                               color: Colors.white,
                               fontSize: 22,
                               letterSpacing: 1,
