@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class OnBoardingStep2 extends StatefulWidget {
   OnBoardingStep2({Key key, this.onChanged}) : super(key: key);
@@ -71,7 +70,7 @@ class _OnBoardingStep2State extends State<OnBoardingStep2> {
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
-                      color: widget.value ? TheBaseColors.lightRed : Color(0xFFDCDCDC),
+                      color: widget.value ? Colors.red : Color(0xFFDCDCDC),
                     ),
                     child: AnimatedAlign(
                       duration: const Duration(milliseconds: 300),

@@ -51,14 +51,12 @@ class DietScreenState extends State<DietScreen> {
               ),
               TextButton(
                   onPressed: () {
-                    pushNewScreen(
-                      context,
-                      screen: Routes.getWidgetForRoute(Routes.viewAllPopUp, context),
-                      pageTransitionAnimation: PageTransitionAnimation.cupertino,);
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => view()));
+
                   },
                   child: Text(
                     'View All',
-                    style: TextStyle(color: TheBaseColors.lightRed),
+                    style: TextStyle(color: Colors.red),
                   )),
             ],
           ),

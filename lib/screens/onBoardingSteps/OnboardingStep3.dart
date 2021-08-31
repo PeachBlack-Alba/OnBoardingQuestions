@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class OnBoardingStep3 extends StatefulWidget {
   OnBoardingStep3({Key key, this.onChanged}) : super(key: key);
