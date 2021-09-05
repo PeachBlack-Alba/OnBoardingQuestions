@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:thebase_app/ui/routing/routes.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/components/PrivacyToggle.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/components/RoundedFilterChipWidget.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
+import 'package:onboardingQuestions/screens/OnboardingQuestionsScreen.dart';
+import 'package:onboardingQuestions/screens/components/OnBoardingSearchBar.dart';
+
+import 'PrivacyToggle.dart';
+import 'RoundedFilterChipWidget.dart';
 
 class ViewAllPopUp extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _ViewAllPopUpState extends State<ViewAllPopUp> {
                   icon: Icon(
                     Icons.close,
                     size: 30,
-                    color: TheBaseColors.lightRed,
+                    color: Colors.red,
                   ),
                   onPressed: () {
                     Navigator.pop(context);
@@ -51,21 +51,22 @@ class _ViewAllPopUpState extends State<ViewAllPopUp> {
           //SEARCH BAR
           TextField(
             onTap: () {
-              pushNewScreen(
+              //onBoadring Serch bar
+
+              Navigator.push(
                 context,
-                screen: Routes.getWidgetForRoute(Routes.onBoardingSearchBar, context),
-                pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                MaterialPageRoute(builder: (context) => OnBoardingSearchBar()),
               );
             },
             controller: _controller,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: TheBaseColors.lightRed, width: 2.0),
+                borderSide: BorderSide(color: Colors.red, width: 2.0),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: TheBaseColors.lightRed, width: 2.0),
+                borderSide: BorderSide(color: Colors.red, width: 2.0),
               ),
               hintText: 'Search',
               suffixIcon: IconButton(
@@ -156,17 +157,17 @@ class _ViewAllPopUpState extends State<ViewAllPopUp> {
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: TheBaseColors.lightRed,
+                primary: Colors.red,
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
               onPressed: () {
-                pushNewScreen(
+                //questioms
+                Navigator.push(
                   context,
-                  screen: Routes.getWidgetForRoute(Routes.questions, context),
-                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                  MaterialPageRoute(builder: (context) => OnboardingQuestionsScreen()),
                 );
               },
               child: Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class GenderScreen extends StatefulWidget {
   @override
@@ -36,7 +35,7 @@ class GenderScreenState extends State<GenderScreen> {
           padding: const EdgeInsets.all(8.0),
           child: TextField(
               style: TextStyle(
-                color: TheBaseColors.lightRed,
+                color: Colors.red,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'FoundersGrotesqueXCond',
               ),
@@ -46,17 +45,17 @@ class GenderScreenState extends State<GenderScreen> {
                 hintText: 'GENDER',
                 hintStyle: TextStyle(fontSize: 20.0, color: Colors.blueGrey),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
                 border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
               )
-            ///////////////////Content
-          ),
+              ///////////////////Content
+              ),
         ),
       ],
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class RoundedFilterChipWidget extends StatefulWidget {
   final String chipName;
@@ -25,7 +24,7 @@ class _RoundedFilterChipWidgetState extends State<RoundedFilterChipWidget> {
       ),
       selected: isSelected,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: TheBaseColors.darkBlue, width: 2),
+        side: BorderSide(color: Colors.blue, width: 2),
         borderRadius: BorderRadius.circular(30.0),
       ),
       backgroundColor: Colors.white,

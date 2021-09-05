@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
-                          'assets/img/topImage.png',
+                          'img/topImage.png',
                           fit: BoxFit.cover,
                           width: size.width,
                           height: size.height / 2,
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'WELCOME TO ,',
+                            'WELCOME TO XXX,',
                                 //'${state.user?.person?.firstName ?? ""}!',
                             style: TextStyle(
                               fontFamily: 'Foucd ndersGrotesqueXCond',

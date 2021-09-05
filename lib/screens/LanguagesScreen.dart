@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:thebase_app/ui/routing/routes.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/components/LanguageTags.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
+import 'package:onboardingQuestions/screens/components/ViewAllPopUp.dart';
+
+import 'components/LanguageTags.dart';
 
 class LanguagesScreen extends StatefulWidget {
   @override
@@ -49,14 +48,14 @@ class LanguagesScreenState extends State<LanguagesScreen> {
               ),
               TextButton(
                   onPressed: () {
-                    pushNewScreen(
+                    Navigator.push(
                       context,
-                      screen: Routes.getWidgetForRoute(Routes.viewAllPopUp, context),
-                      pageTransitionAnimation: PageTransitionAnimation.cupertino,);
+                      MaterialPageRoute(builder: (context) => ViewAllPopUp()),
+                    );
                   },
                   child: Text(
                     'View All',
-                    style: TextStyle(color: TheBaseColors.lightRed),
+                    style: TextStyle(color: Colors.red),
                   )),
             ],
           ),

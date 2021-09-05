@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 
 class FilterChipWidget extends StatefulWidget {
@@ -26,7 +25,7 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
       ),
       selected: isSelected,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: TheBaseColors.darkBlue, width: 1),
+        side: BorderSide(color: Colors.blue, width: 1),
         borderRadius: BorderRadius.circular(10.0),
       ),
       backgroundColor: Colors.white,
@@ -35,7 +34,7 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
           isSelected = selection;
         });
       },
-      selectedColor: TheBaseColors.lightRed,
+      selectedColor: Colors.red,
     );
   }
 }

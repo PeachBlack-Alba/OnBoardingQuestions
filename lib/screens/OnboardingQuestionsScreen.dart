@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:thebase_app/generated/models/customers.dart';
-import 'package:thebase_app/ui/routing/routes.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/DietScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/GenderScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/LanguagesScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/MusicScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/OccupationScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/OnBoardingCompletedScreen.dart';
-import 'package:thebase_app/ui/screens/onboarding/questionScreens/components/HobbiesTags.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
-
-import 'questionScreens/MusicScreen.dart';
+import 'package:onboardingQuestions/screens/components/ViewAllPopUp.dart';
+import 'DietScreen.dart';
+import 'GenderScreen.dart';
+import 'LanguagesScreen.dart';
+import 'MusicScreen.dart';
+import 'OcupationScreen.dart';
+import 'OnBoardingCompletedScreen.dart';
+import 'components/HobbiesTags.dart';
 
 class OnboardingQuestionsScreen extends StatefulWidget {
-  final CustomerAccountModel customer;
-
-  OnboardingQuestionsScreen(this.customer);
+  // final CustomerAccountModel customer;
+  //
+  // OnboardingQuestionsScreen(this.customer);
 
   @override
   State<StatefulWidget> createState() => OnboardingQuestionsScreenState();
@@ -35,18 +30,12 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
     return list;
   }
 
-  void nextPage(){
-    _pageController.animateToPage(_pageController.page.toInt() + 1,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.easeIn
-    );
+  void nextPage() {
+    _pageController.animateToPage(_pageController.page.toInt() + 1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
   }
 
-  void previousPage(){
-    _pageController.animateToPage(_pageController.page.toInt() -1,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.easeIn
-    );
+  void previousPage() {
+    _pageController.animateToPage(_pageController.page.toInt() - 1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
   }
 
   Widget _indicator(bool isActive) {
@@ -56,7 +45,7 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
       decoration: BoxDecoration(
-        color: isActive ? TheBaseColors.lightRed : Colors.grey,
+        color: isActive ? Colors.red : Colors.grey,
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
@@ -70,7 +59,7 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
       resizeToAvoidBottomInset: true,
       //resizeToAvoidBottomPadding: false,
       backgroundColor: background,
-      body:  Column(
+      body: Column(
         children: [
           Expanded(
             child: PageView(
@@ -78,7 +67,7 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
               controller: _pageController,
               onPageChanged: (int page) {
                 setState(
-                      () {
+                  () {
                     _currentPage = page;
                   },
                 );
@@ -119,15 +108,16 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
                               ),
                             ),
                             TextButton(
+                                //viewAllpopUp
                                 onPressed: () {
-                                  pushNewScreen(
+                                  Navigator.push(
                                     context,
-                                    screen: Routes.getWidgetForRoute(Routes.viewAllPopUp, context),
-                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,);
+                                    MaterialPageRoute(builder: (context) => ViewAllPopUp()),
+                                  );
                                 },
                                 child: Text(
                                   'View All',
-                                  style: TextStyle(color: TheBaseColors.lightRed),
+                                  style: TextStyle(color: Colors.red),
                                 )),
                           ],
                         ),
@@ -150,70 +140,70 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
 
       bottomSheet: _currentPage == _numPages - 1
           ? Container(
-        height: size.height * 0.10,
-        color: background,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(children: _buildPageIndicator()),
-            //CHANGE BUTTON
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: TheBaseColors.lightRed,
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              height: size.height * 0.10,
+              color: background,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(children: _buildPageIndicator()),
+                  //CHANGE BUTTON
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {
+                      //questions screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => OnboardingQuestionsScreen()),
+                      );
+                    },
+                    child: Text(
+                      'COMPLETE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              onPressed: () {
-                pushNewScreen(
-                  context,
-                  screen: Routes.getWidgetForRoute(Routes.questions, context),
-                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                );
-              },
-              child: Text(
-                'COMPLETE',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ),
-          ],
-        ),
-      )
+            )
           : Container(
-        height: size.height * 0.10,
-        color: background,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(children: _buildPageIndicator()),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: TheBaseColors.lightRed,
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-              onPressed: () {
-                nextPage();
-              },
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.normal,
-                ),
+              height: size.height * 0.10,
+              color: background,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(children: _buildPageIndicator()),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,
+                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {
+                      nextPage();
+                    },
+                    child: Text(
+                      'Next',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
     );
   }
 }

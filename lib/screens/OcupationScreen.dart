@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class OccupationScreen extends StatefulWidget {
   @override
@@ -37,7 +36,7 @@ class OccupationScreenState extends State<OccupationScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               style: TextStyle(
-                color: TheBaseColors.lightRed,
+                color: Colors.red,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'FoundersGrotesqueXCond',
               ),
@@ -47,13 +46,13 @@ class OccupationScreenState extends State<OccupationScreen> {
                 hintText: 'OCCUPATION',
                 hintStyle: TextStyle(fontSize: 20.0, color: Colors.blueGrey),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
                 border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: TheBaseColors.lightRed),
+                  borderSide: BorderSide(color: Colors.red),
                 ),
               ),
             ),

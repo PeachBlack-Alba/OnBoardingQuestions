@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
 
 class OnBoardingSearchBar extends StatefulWidget {
   OnBoardingSearchBarState createState() => OnBoardingSearchBarState();
@@ -48,7 +47,7 @@ class OnBoardingSearchBarState extends State<OnBoardingSearchBar> {
               icon: Icon(
                 Icons.close,
                 size: 30,
-                color: TheBaseColors.lightRed,
+                color: Colors.red,
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -62,11 +61,11 @@ class OnBoardingSearchBarState extends State<OnBoardingSearchBar> {
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(color: TheBaseColors.lightRed, width: 2.0),
+                  borderSide: BorderSide(color: Colors.red, width: 2.0),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(color: TheBaseColors.lightRed, width: 2.0),
+                  borderSide: BorderSide(color: Colors.red, width: 2.0),
                 ),
                 hintText: 'Search',
                 suffixIcon: IconButton(

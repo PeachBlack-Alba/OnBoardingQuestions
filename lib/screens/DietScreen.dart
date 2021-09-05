@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:thebase_app/ui/routing/routes.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
-
+import 'package:onboardingQuestions/screens/components/ViewAllPopUp.dart';
 import 'components/DietTags.dart';
 
 
@@ -51,7 +48,7 @@ class DietScreenState extends State<DietScreen> {
               ),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => view()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ViewAllPopUp()));
 
                   },
                   child: Text(
