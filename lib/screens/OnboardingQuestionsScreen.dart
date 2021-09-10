@@ -10,7 +10,6 @@ import 'components/HobbiesTags.dart';
 
 class OnboardingQuestionsScreen extends StatefulWidget {
   // final CustomerAccountModel customer;
-  //
   // OnboardingQuestionsScreen(this.customer);
 
   @override
@@ -31,16 +30,18 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
   }
 
   void nextPage() {
-    _pageController.animateToPage(_pageController.page.toInt() + 1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+    _pageController.animateToPage(_pageController.page.toInt() + 1,
+        Duration: Duration(milliseconds: 200));
   }
 
   void previousPage() {
-    _pageController.animateToPage(_pageController.page.toInt() - 1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+    _pageController.animateToPage(_pageController.page.toInt() - 1,
+        Duration: Duration(milliseconds: 200));
   }
 
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+        Duration: Duration(milliseconds: 200),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
