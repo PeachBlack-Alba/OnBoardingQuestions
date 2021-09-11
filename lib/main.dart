@@ -46,21 +46,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void nextPage(){
     _pageController.animateToPage(_pageController.page.toInt() + 1,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.easeIn
+        Duration: Duration(milliseconds: 200),
+       // curve: Curves.easeIn
     );
   }
 
   void previousPage(){
     _pageController.animateToPage(_pageController.page.toInt() -1,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.easeIn
+        Duration: Duration(milliseconds: 200),
     );
   }
 
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+      Duration: Duration(milliseconds: 200),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
@@ -81,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
             children: [
               Expanded(
+
                 child: PageView(
                   physics: ClampingScrollPhysics(),
                   controller: _pageController,

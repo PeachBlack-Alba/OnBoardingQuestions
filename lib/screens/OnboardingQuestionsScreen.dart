@@ -30,18 +30,16 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
   }
 
   void nextPage() {
-    _pageController.animateToPage(_pageController.page.toInt() + 1,
-        Duration: Duration(milliseconds: 200));
+    _pageController.animateToPage(_pageController.page.toInt() + 1, duration: Duration(milliseconds: 200));
   }
 
   void previousPage() {
-    _pageController.animateToPage(_pageController.page.toInt() - 1,
-        Duration: Duration(milliseconds: 200));
+    _pageController.animateToPage(_pageController.page.toInt() - 1, duration: Duration(milliseconds: 200));
   }
 
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
-        Duration: Duration(milliseconds: 200),
+      duration: Duration(milliseconds: 200),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
@@ -182,14 +180,7 @@ class OnboardingQuestionsScreenState extends State<OnboardingQuestionsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(children: _buildPageIndicator()),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.red,
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
+                  FlatButton(
                     onPressed: () {
                       nextPage();
                     },
