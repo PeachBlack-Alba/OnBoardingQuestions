@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onboardingQuestions/screens/onBoardingSteps/OnBoardingStep3.dart';
+import 'package:onboardingQuestions/screens/onBoardingSteps/OnboardingStep2.dart';
 import 'package:onboardingQuestions/screens/onBoardingSteps/OnboardingStep3.dart';
+
 
 void main() {
   runApp(MyApp());
